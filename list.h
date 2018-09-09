@@ -10,7 +10,8 @@ using namespace std;
 template <typename T>
 class List {
     private:
-        Node<T>* start;
+        Node<T>* start; 
+        // No se definió nodes
 
     public:
         List(){
@@ -18,8 +19,8 @@ class List {
             nodes=0;
         };
 
-        T front(){return start -> data;};
-        T back(){return start -> prev -> data;};
+        T front(){return start -> data;}; // Falta controlar caso vacío
+        T back(){return start -> prev -> data;}; // Falta controlar caso vacío
         void push_front(T value){
             Node<T>*temporal=new Node<T>;
             temporal -> data = value;
@@ -51,20 +52,20 @@ class List {
                 last -> next = temporal;
             }
         };
-        void pop_front(){
+        void pop_front(){ // Falta
             Node<T>*temporal=start;
             start -> next = start-> next -> next;
         };
-        void pop_back();
-        T get(int position);
-        void concat(List<T> &other);
+        void pop_back(); // No se implementó 
+        T get(int position); // No se implementó 
+        void concat(List<T> &other); // No se implementó 
         bool empty(){return nodes==0;};
         int size(){return nodes;};
-        void clear(){};
+        void clear(){}; // No se implementó 
         Iterator<T> begin(){return Iterator<T>(start);};
         Iterator<T> end(){return Iterator<T>(start->prev);};
 
-        ~List(){};
+        ~List(){}; // No se implementó
 };
 
 #endif

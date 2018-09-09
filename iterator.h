@@ -12,10 +12,10 @@ class Iterator {
         Iterator();
         Iterator(Node<T>* node);
          
-        Iterator<T> operator=(Iterator<T> node){return current = node;};
+        Iterator<T> operator=(Iterator<T> node){return current = node;}; // Esto está mal
         bool operator!=(Iterator<T> cmp){return current != cmp.current;};
-        Iterator<T> operator++(){current = current -> next;};
-        Iterator<T> operator--(){current = current -> prev;};
+        Iterator<T> operator++(){current = current -> next;}; // Falta return 
+        Iterator<T> operator--(){current = current -> prev;}; // Falta return
         T operator*(){return current -> data;};
 };
 
